@@ -16,7 +16,9 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 function toUser(user: SupabaseUser | null | undefined): User | null {
   if (!user) return null;
   const email = user.email ?? "";
-  return { id: user.id, email, name: email.split("@")[0] };
+  // 카카오 로그인은 닉네임이 메타데이터에 오고, 이메일이 없을 수도 있다.
+  const nickname = user.user_metadata?.full_name ?? user.user_metadata?.name;
+  return { id: user.id, email, name: nickname || email.split("@")[0] || "회원" };
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
