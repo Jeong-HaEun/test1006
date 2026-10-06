@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>취준메이트 - 취업 준비 도우미</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>취업 준비, 혼자 하지 마세요</h1>
+      <p>자소서 작성부터 면접 연습, 지원 현황 관리까지 한 곳에서.</p>
+      <a href="checklist.html" class="btn">준비 시작하기 →</a>
+    </section>
+
+    <section class="card">
+      <h2>💬 오늘의 한마디</h2>
+      <p class="quote" id="daily-quote"></p>
+    </section>
+
+    <section class="card">
+      <h2>📊 나의 준비 현황</h2>
+      <div class="stats">
+        <div class="stat"><strong id="stat-applied">0</strong><span>지원한 회사</span></div>
+        <div class="stat"><strong id="stat-upcoming">0</strong><span>7일 내 마감</span></div>
+        <div class="stat"><strong id="stat-passed">0</strong><span>합격/진행 중</span></div>
+        <div class="stat"><strong id="stat-checklist">0%</strong><span>체크리스트 달성</span></div>
+      </div>
+    </section>
+
+    <section class="grid grid-2">
+      <a href="resume.html" class="card feature-card">
+        <div class="icon">📝</div>
+        <h3>자소서 도우미</h3>
+        <p>글자 수 세기, 작성 팁, STAR 기법 템플릿으로 자기소개서를 완성하세요.</p>
+      </a>
+      <a href="interview.html" class="card feature-card">
+        <div class="icon">🎤</div>
+        <h3>면접 연습</h3>
+        <p>카테고리별 랜덤 질문과 타이머로 실전처럼 답변을 연습하세요.</p>
+      </a>
+      <a href="tracker.html" class="card feature-card">
+        <div class="icon">📅</div>
+        <h3>지원 현황 관리</h3>
+        <p>지원한 회사와 마감일, 진행 단계를 D-day와 함께 관리하세요.</p>
+      </a>
+      <a href="checklist.html" class="card feature-card">
+        <div class="icon">✅</div>
+        <h3>취업 준비 체크리스트</h3>
+        <p>단계별로 놓치기 쉬운 준비 항목을 하나씩 체크하세요.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/checklist-data.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자소서 도우미 - 취준메이트</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <h1 class="page-title">📝 자소서 도우미</h1>
+    <p class="page-desc">글자 수를 확인하며 작성하고, 팁과 템플릿을 참고하세요. 작성 중인 내용은 자동 저장됩니다.</p>
+
+    <section class="card">
+      <h2>글자 수 세기</h2>
+      <div class="grid grid-2" style="margin-bottom:12px">
+        <div>
+          <label for="question">자소서 문항</label>
+          <input type="text" id="question" placeholder="예) 지원 동기와 입사 후 포부를 작성해주세요.">
+        </div>
+        <div>
+          <label for="limit">글자 수 제한 (공백 포함)</label>
+          <input type="text" id="limit" inputmode="numeric" placeholder="예) 1000">
+        </div>
+      </div>
+      <textarea id="essay" placeholder="여기에 자기소개서를 작성하세요..."></textarea>
+
+      <div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
+      <div class="counter-row" id="counter-row">
+        <span>공백 포함 <b id="count-with">0</b>자</span>
+        <span>공백 제외 <b id="count-without">0</b>자</span>
+        <span><b id="count-bytes">0</b> byte</span>
+        <span id="limit-status"></span>
+      </div>
+      <div class="btn-group" style="margin-top:16px">
+        <button class="btn btn-outline btn-sm" id="copy-btn">📋 복사하기</button>
+        <button class="btn btn-outline btn-sm" id="clear-btn">🗑 지우기</button>
+      </div>
+    </section>
+
+    <div class="grid grid-2">
+      <section class="card">
+        <h2>✍️ STAR 기법 템플릿</h2>
+        <p class="muted">경험을 구조적으로 서술하는 대표적인 방법입니다. 클릭하면 작성란에 추가돼요.</p>
+        <div class="star-box"><strong>S (Situation)</strong> — 어떤 상황이었나요?</div>
+        <div class="star-box"><strong>T (Task)</strong> — 내가 맡은 과제/목표는 무엇이었나요?</div>
+        <div class="star-box"><strong>A (Action)</strong> — 구체적으로 어떤 행동을 했나요?</div>
+        <div class="star-box"><strong>R (Result)</strong> — 어떤 결과를 얻었고, 무엇을 배웠나요?</div>
+        <button class="btn btn-sm" id="star-btn">템플릿 삽입</button>
+      </section>
+
+      <section class="card">
+        <h2>💡 작성 팁</h2>
+        <ul class="tip-list">
+          <li><b>두괄식</b>으로 핵심 메시지를 첫 문장에 쓰세요.</li>
+          <li>"열심히", "최선을" 대신 <b>숫자와 결과</b>로 보여주세요.</li>
+          <li>회사 인재상과 내 경험의 <b>연결고리</b>를 명확히 하세요.</li>
+          <li>한 문항에는 <b>하나의 경험</b>만 깊이 있게 다루세요.</li>
+          <li>제한 글자 수의 <b>90% 이상</b> 채우는 것이 좋습니다.</li>
+          <li>다른 회사 이름이 남아있지 않은지 <b>꼭 확인</b>하세요!</li>
+          <li>소리 내어 읽어보며 어색한 문장을 고치세요.</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/resume.js"></script>
+</body>
+</html>

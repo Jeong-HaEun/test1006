@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+/* Crystal Ultra-Glass Tomato — .claude/skills/crystal-glass-tomato-theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  /* Surface & Base */
+  --bg-base: #faf5f2;
+  --glass-surface: rgba(255, 255, 255, 0.32);
+  --glass-surface-hover: rgba(255, 255, 255, 0.45);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.75);
+  --glass-inner-glow: inset 0 1.5px 1px rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  --glass-blur: blur(24px) saturate(180%);
+
+  /* Typography */
+  --text-main: #1a1210;
+  --text-muted: #5f524e;
+  --text-placeholder: #9e918c;
+
+  /* Accent (Tomato) */
+  --accent-tomato: #e54331;
+  --accent-tomato-hover: #ce3322;
+  --accent-tomato-soft: rgba(229, 67, 49, 0.12);
+  --accent-tomato-glow: rgba(229, 67, 49, 0.32);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-base: var(--bg-base);
+  --color-glass: var(--glass-surface);
+  --color-glass-hover: var(--glass-surface-hover);
+  --color-ink: var(--text-main);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-placeholder);
+  --color-tomato: var(--accent-tomato);
+  --color-tomato-hover: var(--accent-tomato-hover);
+  --color-tomato-soft: var(--accent-tomato-soft);
+  --shadow-tomato: 0 6px 20px var(--accent-tomato-glow);
+  --font-sans: var(--font-noto-sans-kr);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* 맑은 유리 카드: 반투명 표면 + 프리즘 테두리 + 딥 블러 */
+@utility glass {
+  background: var(--glass-surface);
+  border: var(--glass-border);
+  box-shadow: var(--glass-inner-glow), var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* 헤더·메뉴처럼 화면 폭 전체를 덮는 유리 막대 */
+@utility glass-bar {
+  background: var(--glass-surface);
+  border-bottom: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  background: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* 앰비언트 글로우 오브젝트: 유리 너머로 비쳐 보이는 배경 빛 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38rem 38rem at 8% 12%, rgba(229, 67, 49, 0.26), transparent 65%),
+    radial-gradient(34rem 34rem at 92% 18%, rgba(255, 176, 120, 0.34), transparent 65%),
+    radial-gradient(40rem 40rem at 78% 88%, rgba(255, 128, 150, 0.22), transparent 65%),
+    radial-gradient(30rem 30rem at 18% 92%, rgba(255, 214, 140, 0.3), transparent 65%);
+}
+
+::selection {
+  background: var(--accent-tomato-soft);
 }

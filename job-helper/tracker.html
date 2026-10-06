@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지원 현황 - 취준메이트</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <h1 class="page-title">📅 지원 현황 관리</h1>
+    <p class="page-desc">지원할 회사와 마감일을 등록하고 진행 단계를 관리하세요.</p>
+
+    <section class="card">
+      <h2>새 지원 추가</h2>
+      <form class="form-grid" id="job-form">
+        <div>
+          <label for="company">회사명</label>
+          <input type="text" id="company" placeholder="예) 취준전자" required>
+        </div>
+        <div>
+          <label for="position">직무</label>
+          <input type="text" id="position" placeholder="예) 마케팅" required>
+        </div>
+        <div>
+          <label for="deadline">마감일</label>
+          <input type="date" id="deadline" required>
+        </div>
+        <div>
+          <label for="status">상태</label>
+          <select id="status"></select>
+        </div>
+        <button type="submit" class="btn">추가</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px">
+        <h2 style="margin:0">지원 목록</h2>
+        <div class="chip-group" id="filters"></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>마감</th>
+              <th>회사명</th>
+              <th>직무</th>
+              <th>마감일</th>
+              <th>상태</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="job-list"></tbody>
+        </table>
+      </div>
+      <p class="empty" id="empty">등록된 지원 내역이 없어요. 위에서 추가해보세요!</p>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/tracker.js"></script>
+</body>
+</html>

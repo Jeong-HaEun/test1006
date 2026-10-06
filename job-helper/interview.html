@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>면접 연습 - 취준메이트</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <h1 class="page-title">🎤 면접 연습</h1>
+    <p class="page-desc">랜덤 질문을 뽑고, 제한 시간 안에 소리 내어 답변해보세요.</p>
+
+    <div class="grid grid-2">
+      <section class="card">
+        <h2>질문 카테고리</h2>
+        <div class="chip-group" id="categories"></div>
+
+        <div class="question-display" id="question">아래 버튼을 눌러 질문을 뽑아보세요!</div>
+
+        <div class="btn-group">
+          <button class="btn" id="draw-btn">🎲 질문 뽑기</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>답변 타이머</h2>
+        <div class="chip-group" id="durations">
+          <button class="chip" data-sec="30">30초</button>
+          <button class="chip active" data-sec="60">1분</button>
+          <button class="chip" data-sec="90">1분 30초</button>
+          <button class="chip" data-sec="120">2분</button>
+        </div>
+        <div class="timer" id="timer">01:00</div>
+        <div class="btn-group" style="justify-content:center">
+          <button class="btn" id="start-btn">▶ 시작</button>
+          <button class="btn btn-outline" id="reset-btn">↺ 리셋</button>
+        </div>
+        <p class="muted" style="text-align:center;margin:16px 0 0;font-size:0.88rem">
+          💡 1분 자기소개는 약 300~350자 분량이 적당해요.
+        </p>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>답변 메모</h2>
+      <textarea id="memo" placeholder="답변 키워드나 개선할 점을 메모하세요." style="min-height:120px"></textarea>
+      <div class="btn-group" style="margin-top:12px">
+        <button class="btn btn-sm" id="save-memo">현재 질문과 함께 저장</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📚 연습 기록 <span class="muted" style="font-size:0.85rem;font-weight:400" id="history-count"></span></h2>
+      <ul class="history-list" id="history"></ul>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/interview.js"></script>
+</body>
+</html>

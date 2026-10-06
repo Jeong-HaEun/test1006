@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체크리스트 - 취준메이트</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <h1 class="page-title">✅ 취업 준비 체크리스트</h1>
+    <p class="page-desc">단계별로 준비 항목을 체크하세요. 진행 상황은 자동 저장됩니다.</p>
+
+    <section class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span class="overall-progress">전체 진행률 <span id="overall-text">0%</span></span>
+        <button class="btn btn-outline btn-sm" id="reset-btn">초기화</button>
+      </div>
+      <div class="progress"><div class="progress-bar" id="overall-bar"></div></div>
+    </section>
+
+    <div class="grid grid-2" id="groups"></div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/common.js"></script>
+  <script src="js/checklist-data.js"></script>
+  <script src="js/checklist.js"></script>
+</body>
+</html>
